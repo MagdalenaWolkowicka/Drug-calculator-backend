@@ -14,8 +14,8 @@ public class Drug {
     @Column(name = "drug")
     private String drug;
 
-    @Column(name = "datee")
-    private String datee;
+    @Column(name = "dateOfAdministration")
+    private String dateOfAdministration;
 
     public Drug() {
     }
@@ -41,10 +41,10 @@ public class Drug {
     }
 
     public String getDate() {
-        return datee;
+        return dateOfAdministration;
     }
 
     public void setDate(String datee) {
-        this.datee = datee;
+        this.dateOfAdministration = datee;
     }
 }
