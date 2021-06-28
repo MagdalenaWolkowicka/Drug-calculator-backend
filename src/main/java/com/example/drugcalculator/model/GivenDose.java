@@ -3,7 +3,7 @@ package com.example.drugcalculator.model;
 import javax.persistence.*;
 
 @Entity
-public class Drug {
+public class GivenDose {
 
     @Id
     @Column(name = "ID")
@@ -17,12 +17,9 @@ public class Drug {
     @Column(name = "dateOfAdministration")
     private String dateOfAdministration;
 
-    public Drug() {
+    public GivenDose() {
     }
 
-    /*public String getName() {
-        return drug;
-    }*/
 
     public Long getId() {
         return id;
@@ -40,11 +37,11 @@ public class Drug {
         this.drug = drug;
     }
 
-    public String getDate() {
+    public String getDateOfAdministration() {
         return dateOfAdministration;
     }
 
-    public void setDate(String datee) {
-        this.dateOfAdministration = datee;
+    public void setDateOfAdministration(String dateOfAdministration) {
+        this.dateOfAdministration = dateOfAdministration;
     }
 }

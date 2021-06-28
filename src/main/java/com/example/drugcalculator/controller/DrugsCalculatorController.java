@@ -1,10 +1,9 @@
-package com.example.drugcalculator;
+package com.example.drugcalculator.controller;
 
 import com.example.drugcalculator.Calculable;
 import com.example.drugcalculator.DrugDose;
 import com.example.drugcalculator.Ibuprofen;
 import com.example.drugcalculator.Paracetamol;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;

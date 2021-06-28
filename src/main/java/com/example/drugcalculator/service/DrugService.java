@@ -1,15 +1,15 @@
 package com.example.drugcalculator.service;
 
-import com.example.drugcalculator.model.Drug;
+import com.example.drugcalculator.model.GivenDose;
 
 import java.util.List;
 
 public interface DrugService {
 
-    List<Drug> getAllDrugs();
-    Drug addDrug(String drugName, String date);
+    List<GivenDose> getAllDrugs();
+    GivenDose addDrug(String drugName, String dateOfAdministration);
     void delete(long id);
-    Drug update(Drug drug);
+    GivenDose update(GivenDose givenDose);
 
 
 }

@@ -1,5 +1,6 @@
-package com.example.drugcalculator;
+package com.example.drugcalculator.service;
 
+import com.example.drugcalculator.DrugDose;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,9 +26,6 @@ public class CalculatorService {
             singleDose = Math.round(singleDose * 10);
             singleDose = singleDose / 10;
             maxDailyDose = calculateParacetamolMaxDailyDose(amountOfSubstanceIn1Ml, bodyWeight, singleDose);
-        } else {
-            //todo ms validation on ui side
-//            System.out.println("Nieprawidłowa wartość masy ciała dziecka\n");
         }
         return new DrugDose(singleDose, maxDailyDose);
     }

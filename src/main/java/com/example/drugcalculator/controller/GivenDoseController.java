@@ -1,7 +1,6 @@
 package com.example.drugcalculator.controller;
 
-import com.example.drugcalculator.DrugFromUI;
-import com.example.drugcalculator.model.Drug;
+import com.example.drugcalculator.model.GivenDose;
 import com.example.drugcalculator.service.DrugService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +15,8 @@ public class GivenDoseController {
     private DrugService drugService;
 
     @PostMapping("/saveGivenDose")
-    public Drug saveGivenDose(@RequestBody DrugFromUI givenDose) {
-        Drug drug = drugService.addDrug(givenDose.getDrug(), givenDose.getDatee());
+    public GivenDose saveGivenDose(@RequestBody GivenDose givenDose) {
+        GivenDose drug = drugService.addDrug(givenDose.getDrug(), givenDose.getDateOfAdministration());
         return drug;
     }
 
@@ -27,24 +26,13 @@ public class GivenDoseController {
     }
 
     @PutMapping("/updateGivenDose")
-    public Drug updateGivenDose(@RequestBody Drug givenDose) {
-        Drug drug = drugService.update(givenDose);
+    public GivenDose updateGivenDose(@RequestBody GivenDose givenDose) {
+        GivenDose drug = drugService.update(givenDose);
         return drug;
     }
 
-
-//    @PutMapping("/updateGivenDose")
-//    public void updateGivenDose(@RequestBody DrugFromUI givenDose) {
-//
-//    }
-//
-//    @DeleteMapping("/deleteGivenDose")
-//    public void deleteGivenDose(@RequestParam("id") int id) {
-
-//    }
-
     @GetMapping("/givenDoses")
-    public List<Drug> getGivenDoses() {
+    public List<GivenDose> getGivenDoses() {
         return drugService.getAllDrugs();
     }
 }
